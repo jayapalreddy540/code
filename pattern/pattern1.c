@@ -1,3 +1,10 @@
+/* pattern
+   n=2
+   output:  11
+   			12
+   			21
+   			22
+*/
 
 #include<stdio.h>
 int n,x[100];
