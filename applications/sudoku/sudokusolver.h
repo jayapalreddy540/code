@@ -16,12 +16,12 @@ _Bool isSafe(int grid[N][N],int row,int col,int num);
 _Bool findInRow(int grid[N][N],int row,int num);
 _Bool findInCol(int grid[N][N],int col,int num);
 _Bool findInGrid(int grid[N][N],int boxStartRow,int boxStartCol,int num);
-
+int sudoku(int grid[N][N]);
 int rowcol[2]={0,0};
 
-int main()
+int sudoku(int grid[][9])
 {
- int grid[N][N]={{3,0,6,5,0,8,4,0,0},
+ /*int grid[N][N]={{3,0,6,5,0,8,4,0,0},
  				 {5,2,0,0,0,0,0,0,0},
  				 {0,8,7,0,0,0,0,3,1},
  				 {0,0,3,0,1,0,0,8,0},
@@ -31,8 +31,11 @@ int main()
  				 {0,0,0,0,0,0,0,7,4},
 				 {0,0,5,2,0,6,3,0,0}
 			    };
+			*/
 	if(solveSudoku(grid)==true)
-	  printGrid(grid);
+	 {	printf("\n/****** solved sudoku ******/\n");
+	   printGrid(grid);
+     }
 	else printf("No Solution exists");
  return 0;
 }
