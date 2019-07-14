@@ -1,0 +1,30 @@
+testcases=int(input())
+time=int(input())
+score=[0 for x in range(testcases)]
+win=[0 for x in range(testcases)]
+a=[]
+for i in range(testcases):
+    a.append([int(x) for x in input().split()])
+for i in range(0,time-1,2):
+    for j in range(testcases):
+        score[j]+=(a[j][i]+a[j][i+1])*a[j][time]
+    max,position=0,0
+    for j in range(testcases):
+        if max<score[j]:
+            max=score[j]
+            position=j
+    win[position]+=1
+if time%2==1:
+    max,position=0,0
+    for j in range(testcases):
+        if max<win[j]:
+            max=win[j]
+            position=j
+    win[position]+=1
+max,position=0,0
+for j in range(testcases):
+    if max<win[j]:
+        max=win[j]
+        position=j
+#print(win)
+print(position+1)
